@@ -1,33 +1,34 @@
-name: Example for minimal setup
 on:
   push:
     branches:
       - master
 
 permissions:
-  contents: write
+  # deployments permission to deploy GitHub pages website
   deployments: write
+  # contents permission to update benchmark contents in gh-pages branch
+  contents: write
 
 jobs:
   benchmark:
-    name: Run minimal steps to run github-action-benchmark
+    name: Performance regression check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v4
         with:
           go-version: "stable"
+      # Run benchmark with `go test -bench` and stores the output to a file
       - name: Run benchmark
         run: go test -bench 'BenchmarkFib' | tee output.txt
-      - name: Download previous benchmark data
-        uses: actions/cache@v1
-        with:
-          path: ./cache
-          key: ${{ runner.os }}-benchmark
+      # gh-pages branch is updated and pushed automatically with extracted benchmark data
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
         with:
+          name: My Project Go Benchmark
           tool: 'go'
           output-file-path: output.txt
-          external-data-json-path: ./cache/benchmark-data.json
-          fail-on-alert: true
+          # Access token to deploy GitHub Pages branch
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Push and deploy GitHub pages branch automatically
+          auto-push: true
