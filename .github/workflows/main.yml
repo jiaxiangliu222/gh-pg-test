@@ -20,7 +20,7 @@ jobs:
           go-version: "stable"
       # Run benchmark with `go test -bench` and stores the output to a file
       - name: Run benchmark
-        run: cat index.html
+        run: go test -bench 'BenchmarkFib' 
       # gh-pages branch is updated and pushed automatically with extracted benchmark data
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
