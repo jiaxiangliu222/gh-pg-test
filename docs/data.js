@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1693590282490,
+  "lastUpdate": 1693590461736,
   "repoUrl": "https://github.com/ChinYikMing/gh-pg-test",
   "entries": {
     "My Project Go Benchmark": [
@@ -284,6 +284,54 @@ window.BENCHMARK_DATA = {
             "value": 4,
             "unit": "auxMetricUnits",
             "extra": "29238 times\n2 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "58044437+ChinYikMing@users.noreply.github.com",
+            "name": "ChinYikMing",
+            "username": "ChinYikMing"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a89c88abf3d340d6d0f33e7f231ba46fd5c328e0",
+          "message": "Merge pull request #1 from ChinYikMing/pr\n\ntest",
+          "timestamp": "2023-09-02T01:47:09+08:00",
+          "tree_id": "e7b7248a6fa99e8daeeda7dcc40e8d6da643844c",
+          "url": "https://github.com/ChinYikMing/gh-pg-test/commit/a89c88abf3d340d6d0f33e7f231ba46fd5c328e0"
+        },
+        "date": 1693590460984,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkFib10",
+            "value": 390.2,
+            "unit": "ns/op",
+            "extra": "3046276 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkFib20",
+            "value": 47107,
+            "unit": "ns/op",
+            "extra": "24379 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkFib20WithAuxMetric - ns/op",
+            "value": 46405,
+            "unit": "ns/op",
+            "extra": "26785 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkFib20WithAuxMetric - auxMetricUnits",
+            "value": 4,
+            "unit": "auxMetricUnits",
+            "extra": "26785 times\n2 procs"
           }
         ]
       }
