@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1693326826206,
+  "lastUpdate": 1693589751215,
   "repoUrl": "https://github.com/ChinYikMing/gh-pg-test",
   "entries": {
     "My Project Go Benchmark": [
@@ -144,6 +144,54 @@ window.BENCHMARK_DATA = {
             "value": 4,
             "unit": "auxMetricUnits",
             "extra": "23383 times\n2 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yikming2222@gmail.com",
+            "name": "ChinYikMing",
+            "username": "ChinYikMing"
+          },
+          "committer": {
+            "email": "yikming2222@gmail.com",
+            "name": "ChinYikMing",
+            "username": "ChinYikMing"
+          },
+          "distinct": true,
+          "id": "1ad8acdd783ea6f76d9df847f6583ec036a3e079",
+          "message": "change running action",
+          "timestamp": "2023-09-02T01:35:19+08:00",
+          "tree_id": "3fc9fb0abd6ecc5e3278869db29707afb2d605ac",
+          "url": "https://github.com/ChinYikMing/gh-pg-test/commit/1ad8acdd783ea6f76d9df847f6583ec036a3e079"
+        },
+        "date": 1693589750719,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkFib10",
+            "value": 331,
+            "unit": "ns/op",
+            "extra": "3625795 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkFib20",
+            "value": 40980,
+            "unit": "ns/op",
+            "extra": "29139 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkFib20WithAuxMetric - ns/op",
+            "value": 41019,
+            "unit": "ns/op",
+            "extra": "27728 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkFib20WithAuxMetric - auxMetricUnits",
+            "value": 4,
+            "unit": "auxMetricUnits",
+            "extra": "27728 times\n2 procs"
           }
         ]
       }
