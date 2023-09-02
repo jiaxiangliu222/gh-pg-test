@@ -3,10 +3,6 @@ on:
     push:                 # note: merge to master branch is also considered a push event
         branches:
           - master
-on:
-    pull_request_target:  # GITHUB_TOKEN is granted on this event but not pull_request event
-        types:
-          - [opened, synchronize]
 
 permissions:
   contents: write
