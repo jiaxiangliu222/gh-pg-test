@@ -1,10 +1,14 @@
-on: [push, pull_request]
+#on: [push, pull_request_target]
+on:
+    push:                 # note: merge to master branch is also considered a push event
+        branches:
+          - master
+    pull_request_target:  # GITHUB_TOKEN is granted on this event but not pull_request event
+        types: [opened, synchronize]
 
 permissions:
-  # deployments permission to deploy GitHub pages website
-  deployments: write
-  # contents permission to update benchmark contents in gh-pages branch
   contents: write
+  deployments: write
 
 jobs:
   benchmark:
@@ -31,3 +35,6 @@ jobs:
           auto-push: true
           # branch
           benchmark-data-dir-path: docs
+          comment-on-alert: true
+          alert-threshold: '100%'
+          comment-always: true
