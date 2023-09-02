@@ -3,8 +3,14 @@ on:
     push:                 # note: merge to master branch is also considered a push event
         branches:
           - master
+        #paths: ['emulate.c', 'rv32_template.c']
+        paths: ['apple']
     pull_request_target:  # GITHUB_TOKEN is granted on this event but not pull_request event
         types: [opened, synchronize]
+        branches:
+          - 'master/**'
+        #paths: ['emulate.c', 'rv32_template.c']
+        paths: ['apple']
 
 permissions:
   contents: write
