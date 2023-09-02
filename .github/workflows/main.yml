@@ -1,11 +1,7 @@
 on: [push, pull_request]
 
 permissions:
-  # deployments permission to deploy GitHub pages website
-  deployments: write
-  # contents permission to update benchmark contents in gh-pages branch
-  contents: write
-  pull-requests: write
+    read-all|write-all
 
 jobs:
   benchmark:
