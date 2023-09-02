@@ -1,19 +1,16 @@
-on: [push, pull_request_target]
+#on: [push, pull_request_target]
+
+on:
+    push:                 # note: merge to master branch is also considered a push event
+        branches:
+          - master
+    pull_request_target:  # GITHUB_TOKEN is granted on this event but not pull_request event
+        types:
+          - [opened, synchronize]
 
 permissions:
-  actions: write
-  checks: write
   contents: write
   deployments: write
-  id-token: write
-  issues: write
-  discussions: write
-  packages: write
-  pages: write
-  pull-requests: write
-  repository-projects: write
-  security-events: write
-  statuses: write
 
 jobs:
   benchmark:
