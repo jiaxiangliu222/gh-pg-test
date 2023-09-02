@@ -1,5 +1,3 @@
-#on: [push, pull_request_target]
-
 on:
     push:                 # note: merge to master branch is also considered a push event
         branches:
